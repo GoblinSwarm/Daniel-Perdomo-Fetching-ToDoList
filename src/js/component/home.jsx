@@ -26,7 +26,7 @@ const Home = () => {
 			if (event.key === "Enter") {
 				if (task.label.trim() !== "") {
 
-					const responde = await fetch(`${URLBASE}/todos/Daniel_Perdomo`, {
+					const response = await fetch(`${URLBASE}/todos/Daniel_Perdomo`, {
 						method: "POST",
 						headers: {
 							"Content-Type": "application/json"
@@ -34,7 +34,7 @@ const Home = () => {
 						body: JSON.stringify(task)
 					})
 
-					if (responde.ok) {
+					if (response.ok) {
 						getAllTask()
 						setTask(initialTask)
 					} else {
@@ -52,7 +52,7 @@ const Home = () => {
 		fetch(`${URLBASE}/todos/${id}`, {
 			method: "DELETE"
 		})
-			.then((responde) => getAllTask())
+			.then((response) => getAllTask())
 			.catch((error) => console.log(error))
 	}
 
