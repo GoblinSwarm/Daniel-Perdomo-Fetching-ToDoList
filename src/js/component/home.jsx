@@ -58,10 +58,10 @@ const Home = () => {
 
 	const getAllTask = async () => {
 		try {
-			let responde = await fetch(`${URLBASE}/users/Daniel_Perdomo`)
-			let data = await responde.json()
+			let response = await fetch(`${URLBASE}/users/Daniel_Perdomo`)
+			let data = await response.json()
 
-			if (responde.status == 404) {
+			if (response.status == 404) {
 				createUser()
 				getAllTask()
 			} else {
