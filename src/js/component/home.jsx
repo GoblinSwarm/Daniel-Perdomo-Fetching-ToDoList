@@ -124,18 +124,18 @@ const Home = () => {
 						/>
 					</form>
 					<br />
+
 					{
 						todos.map((item) => {
 							return (
-								
-								<div key={item.id} className="d-flex justify-content-between">
-									<div>{item.label}</div>
-									<br />
-									<button
-										className="btn btn-danger"
-										onClick={() => deleteTask(item.id)}
-									><i class="fas fa-times"></i></button>
-								</div>
+									<div key={item.id} className="d-flex justify-content-between">
+										<div>{item.label}</div>
+										<br />
+										<button
+											className="btn btn-danger"
+											onClick={() => deleteTask(item.id)}
+										><i className="fas fa-times"></i></button>
+									</div>
 							)
 						})
 					}
